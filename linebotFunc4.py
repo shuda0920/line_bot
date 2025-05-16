@@ -7,16 +7,14 @@ from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, PostbackEvent, TextSendMessage, ImagemapSendMessage, BaseSize, MessageImagemapAction, URIImagemapAction, ImagemapArea, TemplateSendMessage, ButtonsTemplate, DatetimePickerTemplateAction
 from urllib.parse import parse_qsl
 import datetime
-
-
 import os
 
-#line_bot_api = LineBotApi(os.environ.get('0fv9xFESc0wshBi4XIM0pN88VN71j3g3gX7t5cONMRifvgvWq8Vpu8CooRYdVS8YWRwgwyOvYmZaNoEKuTfcSMtfkVMHawMPSs83qQeEs2'))
-#handler = WebhookHandler(os.environ.get('87610cc0e9ca044aa534e4a9ea07ffa6'))
+line_bot_api = LineBotApi(os.environ.get('TOKEN'))
+handler = WebhookHandler(os.environ.get('SECRET'))
 
 
-line_bot_api = LineBotApi('0fv9xFESc0wshBi4XIM0pN88VN71j3g3gX7t5cONMRifvgvWq8Vpu8CooRYdVS8YWRwgwyOvYmZaNoEKuTfcSMtfkVMHawMPSs83qQeEs2/w+6wiMg5dJVCrKNHJHF5uvfSBza+5ajdJJM0+SoEZXAdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('87610cc0e9ca044aa534e4a9ea07ffa6')
+#line_bot_api = LineBotApi('')
+#handler = WebhookHandler('')
 
 @app.route("/callback", methods=['POST'])
 def callback():
